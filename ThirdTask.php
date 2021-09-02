@@ -20,14 +20,9 @@ function set_gen($list){
     $items_count = [];
     $k=0;
     foreach ($list as $item){
-        if ($items_count[$item]>=1){
-            $items_count[$item]++;
-        }else{
-            $items_count[$item]=1;
-        }
+        ($items_count[$item]>=1) ? $items_count[$item]++ : $items_count[$item]=1;
         $k++;
     }
-    print_r($items_count);
     $add = [];
     foreach ($items_count as $k=>$v) {
         if ($v>1){
@@ -38,7 +33,6 @@ function set_gen($list){
         }else{
             $add[] = $k;
         }
-
     }
     echo "<pre>";
     print_r($add);

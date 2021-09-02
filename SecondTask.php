@@ -32,6 +32,6 @@ function all_eq($lst){
         }
         $k++;
     }
-    var_dump($lst);
+    print_r($lst);
 }
 all_eq($lst1);
