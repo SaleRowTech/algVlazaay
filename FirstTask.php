@@ -9,13 +9,19 @@
 //magic(2, 5, 7, k=39) Волшебство случается
 //magic(2, 5, 7, k=2)   Волшебство случается
 
-function magic($a1, $a2, $a3, $k): String
+function magic(...$args): String
 {
-    if (($a1 * $a1 + $a2 * $a2 + $a3 * $a3) % $k == 0){
+    $k =null;
+    $sum = 0;
+    foreach ($args as $arg){
+        $sum += $arg * $arg;
+        $k = $arg;
+    }
+    if ($sum % $k == 0){
         return "Волшебство случается";
     }else{
         return "Никакого волшебства";
     }
 }
 
-echo magic(1,2,3,3);
+echo magic(2, 5, 7, 5);
