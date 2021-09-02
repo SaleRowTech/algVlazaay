@@ -18,11 +18,6 @@ function magic(...$args): String
         $k = $arg;
     }
     $sum -= $k*$k;
-    if ($sum % $k == 0){
-        return "Волшебство случается";
-    }else{
-        return "Никакого волшебства";
-    }
+    return ($sum % $k == 0)?"Волшебство случается":"Никакого волшебства";
 }
-
 echo magic(1, 1, 2, 4);
