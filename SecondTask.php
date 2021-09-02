@@ -11,17 +11,16 @@
 //all_eq(['a', 'aa', 'aaa', 'aaaa', 'aaaaa']) -> ['a____', 'aa___', 'aaa__', 'aaaa_', 'aaaaa']
 //all_eq(['qweasdqweas', 'q', 'rteww', 'ewqqqqq']) -> ['qweasdqweas', 'q__________', 'rteww______', 'ewqqqqq____']
 
-$lst1 = ['крот', 'белка', 'выхухоль'];
+$lst1 = ['крот', 'выхухоль', 'белка'];
 $lst2 = ['a', 'aa', 'aaa', 'aaaa', 'aaaaa'];
 $lst3 = ['qweasdqweas', 'q', 'rteww', 'ewqqqqq'];
 function all_eq($lst){
+    $maxSize = 0;
     foreach ($lst as $str){
-        $maxSize = 0;
         if (iconv_strlen($str) > $maxSize) {
             $maxSize = iconv_strlen($str);
         }
     }
-   // $lst = [];
     $k = 0;
     foreach ($lst as $str) {
         if (iconv_strlen($str) < $maxSize){
@@ -34,6 +33,5 @@ function all_eq($lst){
         $k++;
     }
     var_dump($lst);
-
 }
-all_eq($lst2);
+all_eq($lst1);
