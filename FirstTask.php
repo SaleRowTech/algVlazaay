@@ -17,6 +17,7 @@ function magic(...$args): String
         $sum += $arg * $arg;
         $k = $arg;
     }
+    $sum -= $k*$k;
     if ($sum % $k == 0){
         return "Волшебство случается";
     }else{
@@ -24,4 +25,4 @@ function magic(...$args): String
     }
 }
 
-echo magic(2, 5, 7, 5);
+echo magic(1, 1, 2, 4);
